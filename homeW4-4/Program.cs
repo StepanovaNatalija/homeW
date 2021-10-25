@@ -1,11 +1,13 @@
 ﻿using System;
 
+
 namespace homeW4_4
 {
     class Program
     {
         static void Main(string[] args)
         {
+                                
             int[] myArray1 = { 12, 223, 3343, 45345, 23423, 23, 1112, 456, 33, 1 };
             int[] myArray2 = new int[10];
             int i;
@@ -29,15 +31,14 @@ namespace homeW4_4
             
             
             
-            string[] e = new string[6];
             string choice, e1, e2, e3, e4, e5, e6;
-            int[] n = new int[6];
             int n1, n2, n3, n4, n5, n6;
 
-            Console.Write("Type s for a string array of 6 elements, or n for an array of 6 numbers: ");
+            Console.Write("Enter letter s for a string array of six elements, or n for an array of six numbers: ");
             choice = Console.ReadLine();
-
-                     
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
+            int count1 = 0;
             switch (choice)
             {
                 case "s":
@@ -55,26 +56,26 @@ namespace homeW4_4
                     e6 = Console.ReadLine();
                     Console.WriteLine(" ");
                     Console.WriteLine(" ");
-                    Console.WriteLine(string.Join(", ", e));
-                    for (int l = 0; l < 6; l++)
+                    string[] e = { e1, e2, e3, e4, e5, e6 };
+                    Console.WriteLine($"Your array is: {string.Join(" , ", e)}");
+
+                    for (int l = 0; l < e.Length; l++)
                     {
-                        int count1 = 0;
-                        
-                        for (int q = 0; q < 6; q++)
+                        for (int q = l + 1; q < e.Length; q++)
                         {
                             if (e[l] == e[q])
-                            { 
+                            {
+                                Console.WriteLine($"Duplicate element: {e[l]} ");
                                 count1 = count1 + 1;
-                               
-                            } 
+                            }
                         }
                     }
-                    if (count1 >= 1)
-                        {
-                        Console.Write(" Duplicate: " + e[l] + "  " + count1 + "   times");
-                        }
-                    
-                    Console.WriteLine("No duplicate elements in your array!");
+
+                    if (count1 == 0)
+                    {
+                        Console.WriteLine("No duplicate elements in your array!");
+                    }
+
                     break;
                 case "n":
                     Console.Write("Enter first number: ");
@@ -91,28 +92,34 @@ namespace homeW4_4
                     n6 = int.Parse(Console.ReadLine());
                     Console.WriteLine(" ");
                     Console.WriteLine(" ");
-                    Console.WriteLine("[{0}]", string.Join(", ", n));
-                    for (int k=0; k<6; k++)
+                    int[] n = { n1, n2, n3, n4, n5, n6 };
+                    Console.WriteLine($"Your array is: {string.Join(" , ", n)}");
+
+                    int count2 = 0;
+
+                    for (int k = 0; k < n.Length; k++)
                     {
-                        int count2 = 0;
-                        for (int j=0; j<6; j++)
+                        for (int j = k + 1; j < n.Length; j++)
                         {
-                            if (n[j] == n[k])
-                            {   count2 = count2 + 1;
-                                Console.WriteLine("Duplicate: " + n[j] + "  " + count2 + "   times");
-                            } else
-                                Console.WriteLine("No duplicate numbers in your array!");
+                            if (n[k] == n[j])
+                            {
+                                count2 = count2 + 1;
+                                Console.WriteLine($"Duplicate element: {n[k]} ");
+
+                            }
                         }
+                       
+                    }
+                    if (count2 == 0)
+                    {
+                        Console.WriteLine("No duplicate elements in your array!");
                     }
                     break;
                 default:
                     Console.WriteLine("Invalid entered value - only s or n was required");
                     break;
-
-            }
-
-
-            
+            }     
         }
+       
     }
 }
