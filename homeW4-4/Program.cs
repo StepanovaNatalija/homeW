@@ -61,12 +61,12 @@ namespace homeW4_4
 
                     for (int l = 0; l < e.Length; l++)
                     {
-                        for (int q = l + 1; q < e.Length; q++)
-                        {
+                        for (int q = l+1; q < e.Length; q++)
+                        { 
                             if (e[l] == e[q])
                             {
-                                Console.WriteLine($"Duplicate element: {e[l]} ");
                                 count1 = count1 + 1;
+                                Console.WriteLine($"{l} and {q} elements {e[l]} duplicate");
                             }
                         }
                     }
@@ -101,14 +101,18 @@ namespace homeW4_4
                     {
                         for (int j = k + 1; j < n.Length; j++)
                         {
-                            if (n[k] == n[j])
-                            {
-                                count2 = count2 + 1;
-                                Console.WriteLine($"Duplicate element: {n[k]} ");
+                            
+                                if (n[k] == n[j])
+                                {
+                                    count2 = count2 + 1;
 
-                            }
+                                    Console.WriteLine($"{k} and {j} elements {n[k]} duplicate");
+
+                                }
+                            
                         }
-                       
+                        
+                        
                     }
                     if (count2 == 0)
                     {
