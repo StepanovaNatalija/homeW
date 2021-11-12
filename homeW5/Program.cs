@@ -51,7 +51,7 @@ namespace homeW5
                 "So, as you see, not all words start with Capital letter!");
 
 
-
+            //
             // Below code for checking for any capital letter character in a given string
             string u = "use of tecHnology";
             Console.WriteLine($"Checking for any capital letter in text '{u}'. Are there any?");
