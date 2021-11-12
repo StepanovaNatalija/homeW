@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using static System.String;
@@ -19,36 +19,35 @@ namespace homeW5
             {  
                 Console.WriteLine("{0} {1} a valid mobile number.", s,  
                 r.IsMatch(s) ? "is" : "is not");  
-            }  
-       
- 
+            }
+
+
+
+
             string givenString = "Use Of Technology";  
-           
-            string[] str = Regex.Split(givenString, @"\s+");
-           
-            Regex r = new Regex(@"\A[A-Z]");
-           
-            foreach (string s in str)
+            string[] Str = Regex.Split(givenString, @"\s+");
+            Regex R = new Regex(@"\A[A-Z]");
+            Console.WriteLine($"Checked whether or not each word in '{givenString}' strats with capital letter:");
+            
+            foreach (string s in Str)
             {
-                if (r.IsMatch(s))
-           
+                if (R.IsMatch(s))
             Console.WriteLine("True");
-           
                 else
             Console.WriteLine("False");
             }
         
-            // Alternative
-            string pattern = @"(b[A-Z]\w*\s*)=$";
+            // Alternative  NOT WORKING
+            /*string pattern = @"(b[A-Z]\w*\s*)=$";
             string text = "Use Of Technology";
             MatchCollection matches;
-
             Regex defaultRegex = new Regex(pattern);
-            // Get matches of pattern in text
             matches = defaultRegex.Matches(text);
             Console.WriteLine("Checking whether all words start with capital letters in: " + text);
             if (defaultRegex.IsMatch(text))
-            { Console.WriteLine(matches); }
+            Console.WriteLine("true");
+            else
+            Console.WriteLine("not true");*/
         }
     }
 }
