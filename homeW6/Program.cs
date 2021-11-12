@@ -6,19 +6,24 @@ namespace homeW6
     {
         static void Main(string[] args)
         {
-            int[] myArray1 = { 12, 223, 3343, 45345, 23423, 23, 1112, 456, 33, 1 };
-            Console.Write("This program assignes the same values from one array to another: ");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.Write("myArray1 is: 12, 223, 3343, 45345, 23423, 23, 1112, 456, 33, 1  ");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.Write("myArray2 is: " + myArray2[0] + ", " + myArray2[1] + ", " + myArray2[2] + ", " + myArray2[3] + ", " + myArray2[4] + ", " + myArray2[5] + ", " + myArray2[6] + ", " + myArray2[7] + ", " + myArray2[8] + ", " + myArray2[9]);
-            Console.WriteLine();
-            Console.WriteLine();
+            int[] array1 = new int[10];
+            
+            Console.Write("Input ten integers in the array :\n");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("element {0} : ", i);
+                array1[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.Write("\nElements in your array are: ");
+            for (int i = 0; i < 10; i++)
+            Console.Write("{0}  ", array1[i]);
+
+            int[] array2 = new int[10];
+
+            Array.Array1ToArray2(array1, array2);
 
 
-        }
-
+        }        
     }
 }

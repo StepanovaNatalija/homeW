@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace homeW6
 {
-    public class Array
+    public static class Array
     {
-        public int[] myArray2;
-
-    public Array(int[] array)
+        
+        public static void Array1ToArray2(int[] array1, int[] array2)
         {
-            int[] myArray1 = new int[10];
-            int[] myArray2 = new int[10];
-            int i;
-            for (i = 0; i < 10; i++)
+            for (int i  = 0; i < 10; i++)
             {
-                myArray2[i] = myArray1[i];
+                array2[i] = array1[i];
             }
-            myArray2 = array;
+
+            Console.Write("\nElements from your array were assigned to another array: ");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write("{0}  ", array2[i]);
+            }
+            Console.Write("\n");
         }
     } 
 }
