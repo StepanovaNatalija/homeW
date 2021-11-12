@@ -15,7 +15,7 @@ namespace homeW6
                 array1[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-            Console.Write("\nElements in your array are: ");
+            Console.WriteLine("Elements in your array are: ");
             for (int i = 0; i < 10; i++)
             Console.Write("{0}  ", array1[i]);
 
